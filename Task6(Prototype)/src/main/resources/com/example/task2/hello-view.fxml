@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.collections.*?>
+
+<?import java.lang.String?>
+<GridPane alignment="CENTER" hgap="10" prefHeight="450.0" prefWidth="650.0" style="-fx-background-color: white;" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task2.HelloController">
+
+    <padding>
+        <Insets bottom="10.0" left="0.0" right="0.0" top="10.0" />
+    </padding>
+
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color: #ccc">
+        <ListView fx:id="listview" GridPane.rowIndex="0" GridPane.columnIndex="0" prefHeight="302.0" prefWidth="143.0"></ListView>
+        <Canvas fx:id="canvas" height="230.0"  width="450.0"
+                GridPane.rowIndex="1" GridPane.columnIndex="0"
+                onMousePressed="#onMousePressed"/>
+        <!--onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed"-->
+    </GridPane>
+
+    <GridPane hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <GridPane.margin>
+            <Insets top="20.0" />
+        </GridPane.margin>
+        <Label fx:id="welcomeText" text="Толщина обводки"
+               GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="textField" text="5"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" text="Delete"
+                GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Label fx:id="VelShapeLabel" text="Величина фигуры"
+               GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="VelShapeTextF" text="5"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <GridPane hgap="1" vgap="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <ColorPicker fx:id="colorPicker" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <value>
+                <Color red="0.1" green="0.1" blue="0.7" />
+            </value>
+            <GridPane.margin>
+                <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" /> <!--top20-->
+            </GridPane.margin>
+        </ColorPicker>
+        <ColorPicker fx:id="colorPickerBorder" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <value>
+                <Color red="0.1" green="0.7" blue="0.1" />
+            </value>
+            <GridPane.margin>
+                <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" />
+            </GridPane.margin>
+        </ColorPicker>
+    </GridPane>
+<!--
+    <GridPane hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Pane onMouseClicked="#mouseClicked">
+            <Canvas fx:id="canvasMouse" height="330.0"  width="305.0" onMouseMoved="#canvaseMoveMouse"  />
+        </Pane>
+    </GridPane>
+-->
+<!--
+    <MenuButton onAction="#DrawSuperClass" text="defolt" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <items>
+            <MenuItem onAction="#DrawSuperClass" mnemonicParsing="false" text="Unspecified Action" />
+        </items>
+    </MenuButton>
+-->
+
+
+</GridPane>

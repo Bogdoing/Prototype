@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.collections.*?>
+
+<?import java.lang.String?>
+<GridPane alignment="CENTER" hgap="10" prefHeight="550.0" prefWidth="500.0" style="-fx-background-color: white;" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task2.HelloController">
+
+    <padding>
+        <Insets bottom="10.0" left="0.0" right="0.0" top="10.0" />
+    </padding>
+
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color: #ccc">
+        <Canvas fx:id="canvas" height="230.0"  width="305.0"  />
+        <!--onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed"-->
+    </GridPane>
+
+    <GridPane hgap="10" vgap="10" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-background-color: #ccc">
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+        <Button fx:id="buttonStart1" onAction="#onHelloButtonClick1" text="Draw Polygon"
+                GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button fx:id="buttonStart2" mnemonicParsing="false" onAction="#onHelloButtonClick2" text="Draw Rect"
+                GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Button fx:id="buttonStart3" mnemonicParsing="false" onAction="#onHelloButtonClick3" text="Draw Oval"
+                GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Button fx:id="buttonStart4" mnemonicParsing="false" onAction="#onHelloButtonClick4" text="Draw RoundRect"
+                GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <ChoiceBox fx:id="choicebox"  GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Draw Polygon" />
+                    <String fx:value="Draw Rect" />
+                    <String fx:value="Draw Oval" />
+                    <String fx:value="Draw RoundRect" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <Button fx:id="buttonStart5" mnemonicParsing="false" onAction="#DrawSuperClass" text="Draw"
+                GridPane.columnIndex="0" GridPane.rowIndex="5" >
+            <GridPane.margin>
+                <Insets left="80.0" />
+            </GridPane.margin>
+        </Button>
+    </GridPane>
+
+
+    <GridPane hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <GridPane.margin>
+            <Insets top="20.0" />
+        </GridPane.margin>
+        <Label fx:id="welcomeText" text="Толщина обводки" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="textField" text="5" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    </GridPane>
+
+    <GridPane hgap="1" vgap="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <ColorPicker fx:id="colorPicker" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <value>
+                <Color red="0.1" green="0.1" blue="0.7" />
+            </value>
+            <GridPane.margin>
+                <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" /> <!--top20-->
+            </GridPane.margin>
+        </ColorPicker>
+        <ColorPicker fx:id="colorPickerBorder" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <value>
+                <Color red="0.1" green="0.7" blue="0.1" />
+            </value>
+            <GridPane.margin>
+                <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" />
+            </GridPane.margin>
+        </ColorPicker>
+    </GridPane>
+<!--
+    <GridPane hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Pane onMouseClicked="#mouseClicked">
+            <Canvas fx:id="canvasMouse" height="330.0"  width="305.0" onMouseMoved="#canvaseMoveMouse"  />
+        </Pane>
+    </GridPane>
+-->
+<!--
+    <MenuButton onAction="#DrawSuperClass" text="defolt" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <items>
+            <MenuItem onAction="#DrawSuperClass" mnemonicParsing="false" text="Unspecified Action" />
+        </items>
+    </MenuButton>
+-->
+
+
+</GridPane>
